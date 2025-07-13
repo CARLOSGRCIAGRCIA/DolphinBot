@@ -32,7 +32,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         var document = doc[Math.floor(Math.random() * doc.length)]
 
         let buttonMessage = {
-            document: { url: `https://github.com/El-brayan502` },
+            document: { url: `https://github.com/CARLOSGRCIAGRCIA` },
             mimetype: `application/${document}`,
             fileName: `DOLPHIN Bot`,
             fileLength: 99999999999999,
@@ -41,13 +41,13 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
                 forwardingScore: 200,
                 isForwarded: true,
                 externalAdReply: {
-                    mediaUrl: 'https://github.com/El-brayan502,
+                    mediaUrl: 'https://github.com/CARLOSGRCIAGRCIA',
                     mediaType: 2,
                     previewType: 'pdf',
                     title: `• Resultados Encontrados🔎`,
-                    body: 'Desarrollado por Brayan330,
+                    body: 'Desarrollado por Carlos G',
                     thumbnail: catalogo,
-                    sourceUrl: 'https://wa.me/50231458537'
+                    sourceUrl: 'https://wa.me/529516526675'
                 }
             },
             caption: str,

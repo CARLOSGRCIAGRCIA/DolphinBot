@@ -1,10 +1,3 @@
-/* 
-- Nino NagiBot Bot By Brayan330
-- Powered By Team Code Free
-- https://whatsapp.com/channel/YOUR_CHANNEL
-*/
-
-// *🌤️ [ Weather Information ]*
 
 import fetch from 'node-fetch';
 

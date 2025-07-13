@@ -14,7 +14,7 @@ let handler = async (m, { conn }) => {
       externalAdReply: {
         title: "Información del Bot",
         body: "Bot desarrollado con amor",
-        sourceUrl: "https://github.com/El-brayan502/NagiBotV2",
+        sourceUrl: "https://github.com/CARLOSGRCIAGRCIA/DolphinBot",
         thumbnailUrl: "https://qu.ax/VeQxk.jpg",
         mediaType: 1,
         renderLargerThumbnail: true,

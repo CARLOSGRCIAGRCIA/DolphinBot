@@ -18,16 +18,16 @@
         "eslint": "eslint .",
         "eslintfix": "eslint --fix ."
     },
-    "homepage": "https://github.com/CARLOSGRCIAGRCIA/NagiBotV2",
+    "homepage": "https://github.com/CARLOSGRCIAGRCIA/DolphinBot",
     "author": {
         "name": "CARLOSGRCIAGRCIA"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/CARLOSGRCIAGRCIA/NagiBotV2.git"
+        "url": "git+https://github.com/CARLOSGRCIAGRCIA/DolphinBot.git"
     },
     "bugs": {
-        "url": "https://github.com/CARLOSGRCIAGRCIA/NagiBotV2/issues"
+        "url": "https://github.com/CARLOSGRCIAGRCIA/DolphinBot/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
