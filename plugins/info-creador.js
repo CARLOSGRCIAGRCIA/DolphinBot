@@ -11,12 +11,12 @@ BEGIN:VCARD
 VERSION:3.0
 N:;${ownerName};;;
 FN:${ownerName}
-ORG:KTS-Bot;
+ORG:DOLPHIN-Bot;
 TITLE:${ownerLabel}
 item1.TEL;waid=${ownerNumber}:${ownerNumber}
 item1.X-ABLabel:${ownerLabel}
 X-WA-BIZ-DESCRIPTION:${global.packname || 'Bot de WhatsApp'}
-X-WA-BIZ-NAME:${global.namebot || 'KTS-Bot'}
+X-WA-BIZ-NAME:${global.namebot || 'DOLPHIN-Bot'}
 URL:${chatLink}
 END:VCARD
 `.trim();

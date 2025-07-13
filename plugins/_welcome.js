@@ -9,8 +9,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let taguser = `@${who.split('@')[0]}`
   let chat = global.db.data.chats[m.chat]
   //let defaultImage = 'https://files.catbox.moe/k4cdwk.jpg';
-  const defaultImage = fs.readFileSync('../Dolphin.png')  // Carga imagen local una sola vez
-
+  const defaultImage = fs.readFileSync('./Dolphin.png')
 
   if (chat.welcome) {
     let img;
@@ -22,12 +21,12 @@ export async function before(m, { conn, participants, groupMetadata }) {
     }
 
     if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
-      let bienvenida = `┏━〔 *𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤/𝙖* 〕━┓
+      let bienvenida = `┏━〔 *𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙@* 〕━┓
 ┃ Usuario: ${taguser}
 ┃ Grupo: *${groupMetadata.subject}*
 ┃
-┃ ✨ ¡Pásala genial con todos!
-┃ 🛠 Usa *#menu* para ver comandos
+┃ ✨ ¡𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙@ 𝙖 𝙡𝙖 𝙛𝙖𝙢𝙞𝙡𝙞𝙖  !
+┃ 𝒖𝒔𝒐 𝒅𝒆𝒍 𝒃𝒐𝒕 𝒒𝒖𝒆𝒅𝒂 𝒓𝒆𝒔𝒆𝒓𝒗𝒂𝒅𝒐 𝒔𝒐𝒍𝒐 𝒑𝒂𝒓𝒂 𝒂𝒅𝒎𝒊𝒏𝒊𝒔𝒕𝒓𝒂𝒅𝒐𝒓𝒆𝒔
 ┗━━━━━━━━━━━━━━━━━━┛`
       await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [who] })
     } else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {

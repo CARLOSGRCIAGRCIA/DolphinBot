@@ -29,4 +29,4 @@ handler.help = ["ppt *<piedra|papel|tijera>*"];
 handler.tags = ["juegos"];
 handler.command = ["ppt"];
 
-module.exports = handler;
+export default handler

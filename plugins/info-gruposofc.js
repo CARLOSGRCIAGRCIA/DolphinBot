@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
    ├─ ❏ ⚽️ https://whatsapp.com/channel/0029VbAfBzIKGGGKJWp5tT3L
    ╰─━━────────────━━─╯`
 
-  const catalogo1 = fs.readFileSync('../Dolphin.png')
+  const catalogo1 = fs.readFileSync('./Dolphin.png')
 
   await conn.sendFile(m.chat, catalogo1, 'Dolphin.png', grupos, m, rcanal)
   await m.react(emojis)
