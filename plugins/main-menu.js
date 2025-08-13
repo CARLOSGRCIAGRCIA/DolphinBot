@@ -167,21 +167,21 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     const buttons = [
       {
         buttonId: `${_p}owner`,
-        buttonText: { displayText: "👑 Ｃ Ｒ Ｅ Ａ Ｄ Ｏ Ｒ" },
+        buttonText: { displayText: "👑 Cʀᴇᴀᴅᴏʀ" },
         type: 1,
       },
       {
         buttonId: `${_p}code`,
-        buttonText: { displayText: "🕹 Ｓ Ｅ Ｒ Ｂ Ｏ Ｔ" },
+        buttonText: { displayText: "🕹 SᴇʀBᴏᴛ" },
         type: 1,
       },      {
         buttonId: `${_p}grupos`,
-        buttonText: { displayText: "🌪 Ｇ Ｒ Ｕ Ｐ Ｏ Ｓ" },
+        buttonText: { displayText: "🌪 Mᴇɴᴜ Cᴀᴛᴇɢᴏʀɪá" },
         type: 1,
       },
     ];
 
-    let img = 'https://files.catbox.moe/2p3mon.png';
+    let img = 'https://qu.ax/JhdYp.jpg';
     await m.react('⚽️');
 
     await conn.sendMessage(
@@ -190,7 +190,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         image: { url: img },
         caption: menuText,
         buttons: buttons,
-        footer: "𝘾𝙖𝙧𝙡𝙤𝙨 𝙂",
+        footer: "NᴀɢɪBᴏᴛ-ᴍD x Bʀᴀʏᴀɴ Y Cʟᴀʀɪᴛᴀ",
         viewOnce: true,
       },
       { quoted: m }
@@ -203,7 +203,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 
 handler.help = ['allmenu'];
 handler.tags = ['main'];
-handler.command = ['allmenu', 'menucompleto', 'menúcompleto', 'menú', 'menu'];
+handler.command = ['allmenu', 'menucompleto', 'menúcompleto', 'help', 'menu2'];
 handler.register = true;
 export default handler;
 

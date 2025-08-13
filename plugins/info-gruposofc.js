@@ -1,26 +1,42 @@
-import fs from 'fs'
+const handler = async (m, { conn, usedPrefix, command }) => {
+  const texto = `
+🌐 *Grupos Oficiales de DolphinBotV3* 🚀
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-  let grupos = `*¡Hola! Te invito a unirte a los grupos oficiales del bot para convivir con la comunidad...*
+✨ Únete a nuestra comunidad, comparte ideas, reporta errores, o simplemente charla con otros usuarios. ¡Eres bienvenido!
 
-   ╭─━━───╼◈◉◈╾───━━─╮
-   │ *『 1. Grupo Oficial 』*
-   ├─ ❏ ⚽️ https://chat.whatsapp.com/EdND7QAHE9w0XPYGx2ZfQw
-   ╰─━━────────────━━─╯
+📂 *Lista de grupos:*
+1️⃣  *Soporte General*  
+https://chat.whatsapp.com/C7B0xV6SZLvEQ6sBfEZCSD
 
-   ╭─━━───╼◈◉◈╾───━━─╮
-   │ *『 Canal Oficial 』*
-   ├─ ❏ ⚽️ https://whatsapp.com/channel/0029VbAfBzIKGGGKJWp5tT3L
-   ╰─━━────────────━━─╯`
+2️⃣  *canal principal*  
+https://whatsapp.com/channel/0029VajUPbECxoB0cYovo60W
 
-  const catalogo1 = fs.readFileSync('./Dolphin.png')
+3️⃣  *Testers & Beta*  
+https://whatsapp.com/channel/0029VajUPbECxoB0cYovo60W
 
-  await conn.sendFile(m.chat, catalogo1, 'Dolphin.png', grupos, m, rcanal)
-  await m.react(emojis)
+⚠️ Respeta las normas de cada grupo. DolphinBotV3 ama la paz 🎋
+
+─
+📌 Usa *.menu* para ver todos los comandos.
+`
+
+  await conn.sendMessage(m.chat, {
+    text: texto.trim(),
+    contextInfo: {
+      externalAdReply: {
+        title: "DolphinBot 🌌",
+        body: "Únete a nuestros grupos oficiales",
+        thumbnailUrl: 'https://qu.ax/OmQYc.png', // Puedes cambiar la imagen
+        sourceUrl: "https://github.com/CARLOSGRCIAGRCIA/DolphinBot",
+        mediaType: 1,
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: m })
 }
 
 handler.help = ['grupos']
 handler.tags = ['info']
-handler.command = ['grupos', 'links', 'groups']
+handler.command = /^grupos$/i
 
 export default handler

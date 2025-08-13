@@ -34,7 +34,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         let buttonMessage = {
             document: { url: `https://github.com/CARLOSGRCIAGRCIA` },
             mimetype: `application/${document}`,
-            fileName: `DOLPHIN Bot`,
+            fileName: `Dolphin Bot`,
             fileLength: 99999999999999,
             pageCount: 200,
             contextInfo: {
@@ -45,7 +45,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
                     mediaType: 2,
                     previewType: 'pdf',
                     title: `• Resultados Encontrados🔎`,
-                    body: 'Desarrollado por Carlos G',
+                    body: 'Desarrollado por 𝑪𝒂𝒓𝒍𝒐𝒔 𝑮',
                     thumbnail: catalogo,
                     sourceUrl: 'https://wa.me/529516526675'
                 }

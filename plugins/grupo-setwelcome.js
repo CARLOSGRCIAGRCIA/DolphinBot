@@ -1,15 +1,19 @@
-let handler = async (m, { conn, text, isRowner }) => {
-  if (!text) return m.reply(`${emoji} Por favor, proporciona una bienvenida para el bot.\n> Ejemplo: #setwelcome Hola user`);
+let handler = async (m, { conn, text, isAdmin, isOwner }) => {
+  if (!isAdmin && !isOwner) 
+    return m.reply('⚠️ Solo administradores pueden cambiar el mensaje de bienvenida.');
 
-  global.welcom1 = text.trim();
-  
-  m.reply(`${emoji} La bienvenida del bot ha sido cambiado a: ${global.welcom1}`);
+  if (!text) 
+    return m.reply('📢 Proporciona un mensaje de bienvenida.\nEjemplo: #setwelcome Bienvenido @user al grupo *{group}*!');
+
+  let chat = global.db.data.chats[m.chat];
+  chat.customWelcome = text.trim();
+
+  m.reply(`✅ Mensaje de bienvenida para este grupo actualizado:\n${chat.customWelcome}`);
 };
 
-handler.help = ['setwelcome'];
-handler.tags = ['tools'];
-handler.command = ['setwelcome'];
-handler.owner = false;
+handler.help = ['setwelcome <mensaje>'];
+handler.tags = ['group'];
+handler.command = /^setwelcome$/i;
 handler.admin = true;
 
 export default handler;

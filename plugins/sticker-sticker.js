@@ -13,7 +13,7 @@ if (/webp|image|video/g.test(mime)) {
 if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return m.reply(`🥷 *¡El video no puede durar mas de 8 segundos!*`)
 let img = await q.download?.()
 
-if (!img) return conn.reply(m.chat, `⚠️𝙍𝙀𝙎𝙋𝙊𝙉𝘿𝙀 𝙐𝙉𝘼 𝙄𝙈𝘼𝙂𝙀𝙉/𝙑𝙄𝘿𝙀𝙊 𝙋𝘼𝙍𝘼 𝘾𝙍𝙀𝘼𝙍 𝙀𝙇 𝙎𝙏𝙄𝘾𝙆𝙀𝙍⚠️`, m, rcanal)
+if (!img) return conn.reply(m.chat, `⚠️𝙍𝙀𝙎𝙋𝙊𝙉𝘿𝙀 𝙐𝙉𝘼 𝙄𝙈𝘼𝙂𝙀𝙉/𝙑𝙄𝘿𝙀𝙊 𝙋𝘼𝙍𝘼 𝘾𝙍𝙀𝘼𝙍 𝙀𝙇 𝙎𝙏𝙄𝘾𝙆𝙀𝙍⚠️`, m)
 
 let out
 try {

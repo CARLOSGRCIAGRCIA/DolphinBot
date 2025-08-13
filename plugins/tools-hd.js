@@ -1,36 +1,68 @@
-import axios from "axios";
-import uploadImage from "../lib/uploadImage.js";
+import fetch from 'node-fetch'
+import FormData from 'form-data'
 
-const handler = async (m, { conn }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
+  const quoted = m.quoted ? m.quoted : m
+  const mime = quoted.mimetype || quoted.msg?.mimetype || ''
+
+  // Validar si el archivo es una imagen JPG o PNG
+  if (!/image\/(jpe?g|png)/i.test(mime)) {
+    await conn.sendMessage(m.chat, { react: { text: '❗', key: m.key } })
+    return m.reply(`Envía o *responde a una imagen* con el comando:\n*${usedPrefix + command}*`)
+  }
+
   try {
-    const q = m.quoted || m;
-    const mime = (q.msg || q).mimetype || q.mediaType || "";
-    if (!mime.startsWith("image/")) {
-      return conn.reply(m.chat, " Responde a una *Imagen.*", m);
+    await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
+
+    const media = await quoted.download()
+    const ext = mime.split('/')[1]
+    const filename = `mejorada_${Date.now()}.${ext}`
+
+    const form = new FormData()
+    form.append('image', media, { filename, contentType: mime })
+    form.append('scale', '2')
+
+    const headers = {
+      ...form.getHeaders(),
+      'accept': 'application/json',
+      'x-client-version': 'web',
+      'x-locale': 'es'
     }
 
-    await m.react("🕓");
-    const imgBuffer = await q.download?.();
-    const urlSubida = await uploadImage(imgBuffer);
-    const upscaledBuffer = await getUpscaledImage(urlSubida);
+    const res = await fetch('https://api2.pixelcut.app/image/upscale/v1', {
+      method: 'POST',
+      headers,
+      body: form
+    })
 
-    await conn.sendFile(m.chat, upscaledBuffer, "upscaled.jpg", "*𝘼𝙦𝙪í 𝙩𝙞𝙚𝙣𝙚𝙨 𝙩𝙪 𝙞𝙢𝙖𝙜𝙚𝙣 𝙢𝙚𝙟𝙤𝙧𝙖𝙙𝙖*", m);
-    await m.react("✅");
-  } catch (e) {
-    console.error("Error:", e);
-    await m.react("✖️");
-    conn.reply(m.chat, "Ocurrió un error al mejorar la imagen.", m);
+    const json = await res.json()
+
+    if (!json?.result_url || !json.result_url.startsWith('http')) {
+      throw new Error('No se pudo obtener la imagen mejorada desde Pixelcut.')
+    }
+
+    const resultBuffer = await (await fetch(json.result_url)).buffer()
+
+    await conn.sendMessage(m.chat, {
+      image: resultBuffer,
+      caption: `
+✨ Tu imagen ha sido mejorada al doble de resolución.
+
+📈 Mayor nitidez y más detalles.
+
+🔧 _Usa esta función cuando necesites mejorar una imagen borrosa._
+`.trim()
+    }, { quoted: m })
+
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+  } catch (err) {
+    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
+    m.reply(`❌ Falló la mejora de imagen:\n${err.message || err}`)
   }
-};
-
-handler.help = ["hd"]  
-handler.tags = ["tools"]  
-handler.command = ["remini", "hd", "enhance"]  
-handler.register = true
-export default handler;
-
-async function getUpscaledImage(imageUrl) {
-  const apiUrl = `https://api.siputzx.my.id/api/iloveimg/upscale?image=${encodeURIComponent(imageUrl)}`;
-  const response = await axios.get(apiUrl, { responseType: "arraybuffer" });
-  return Buffer.from(response.data);
 }
+
+handler.help = ['hd']
+handler.tags = ['herramientas', 'imagen']
+handler.command = /^hd$/i
+
+export default handler

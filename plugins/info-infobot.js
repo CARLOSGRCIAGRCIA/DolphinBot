@@ -1,9 +1,9 @@
 let handler = async (m, { conn }) => {
   const info = `
 ╭─❒ 「 *INFO DEL BOT* 」
-│ 🤖 *Nombre:* DOLPHIN-AI
+│ 🤖 *Nombre:* DolphinBot-AI
 │ 👑 *Creador:* @CarlosG
-│ 🧠 *Base:* DOLPHIN-MD
+│ 🧠 *Base:* DolphinBot-MD
 │ 🌐 *Plataforma:* Baileys MD
 │ 📆 *Fecha:* ${new Date().toLocaleDateString()}
 ╰───────────────`;
@@ -15,7 +15,7 @@ let handler = async (m, { conn }) => {
         title: "Información del Bot",
         body: "Bot desarrollado con amor",
         sourceUrl: "https://github.com/CARLOSGRCIAGRCIA/DolphinBot",
-        thumbnailUrl: "https://qu.ax/VeQxk.jpg",
+        thumbnailUrl: "https://qu.ax/OmQYc.png",
         mediaType: 1,
         renderLargerThumbnail: true,
         showAdAttribution: true
