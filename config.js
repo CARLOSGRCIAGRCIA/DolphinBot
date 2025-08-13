@@ -60,7 +60,7 @@ global.gt = 'ᶜʳᵉᵃᵗᵉᵈ ᴮʸ ᶜᵃʳˡᵒˢ ᴳ';
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.imagen0 = fs.readFileSync('/Dolphin.png');
+global.imagen0 = fs.readFileSync('./Dolphin.png');
 global.imagen1 = fs.readFileSync('./Dolphin.png');
 global.catalogo = fs.readFileSync('./Dolphin.png');
 
