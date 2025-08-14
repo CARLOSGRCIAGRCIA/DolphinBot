@@ -60,11 +60,11 @@ export async function before(m, { conn }) {
         },
         externalAdReply: {
           title: 'Carlos G',
-          body: '🌸◌*̥₊ Rᴏxʏ-Mᴅ ◌❐🎋༉',
+          body: '𝑫𝒐𝒍𝒑𝒉𝑰𝒏𝑩𝒐𝒕',
           mediaUrl: null,
           description: null,
           previewType: "PHOTO",
-          thumbnailUrl: 'https://files.cloudkuimages.guru/images/HUmjMRt8.jpg',
+          thumbnailUrl: 'https://qu.ax/OmQYc.png',
           sourceUrl: 'https://github.com/El-brayan502/RoxyBot-MD/',
           mediaType: 1,
           renderLargerThumbnail: true
@@ -97,8 +97,8 @@ export async function before(m, { conn }) {
             mentionedJid: [m.sender],
             externalAdReply: {
               title: 'Carlos G',
-              body: '🌸◌*̥₊ Rᴏxʏ-Mᴅ ◌❐🎋༉',
-              thumbnailUrl: 'https://files.cloudkuimages.guru/images/HUmjMRt8.jpg',
+              body: '𝑫𝒐𝒍𝒑𝒉𝑰𝒏𝑩𝒐𝒕',
+              thumbnailUrl: 'https://qu.ax/OmQYc.png',
               sourceUrl: 'https://github.com/El-brayan502/RoxyBot-MD/',
               mediaType: 1,
               renderLargerThumbnail: true
@@ -124,8 +124,8 @@ export async function before(m, { conn }) {
           mentionedJid: [m.sender],
           externalAdReply: {
             title: 'Carlos G',
-            body: '🌸◌*̥₊ Rᴏxʏ-Mᴅ ◌❐🎋༉',
-            thumbnailUrl: 'https://files.cloudkuimages.guru/images/HUmjMRt8.jpg',
+            body: '𝑫𝒐𝒍𝒑𝒉𝑰𝒏𝑩𝒐𝒕',
+            thumbnailUrl: 'https://qu.ax/OmQYc.png',
             sourceUrl: 'https://github.com/El-brayan502/RoxyBot-MD/',
             mediaType: 1,
             renderLargerThumbnail: true

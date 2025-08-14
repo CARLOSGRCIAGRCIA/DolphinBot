@@ -31,8 +31,8 @@ console.log(`Error : ${e}`)
 global.creador = 'Wa.me/50231458537'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'Wa.me50231458537'
-global.namechannel = 'ＮＡＧＩＢＯＴ－Ｖ²'
-global.namegrupo = 'ＮＡＧＩＢＯＴ－Ｖ²'
+global.namechannel = '𝑫𝑶𝑳𝑷𝑯𝑰𝑵－Ｖ²'
+global.namegrupo = '𝑫𝑶𝑳𝑷𝑯𝑰𝑵－Ｖ²'
 global.namecomu = '𝙏𝙃𝙀 𝘽𝙍𝙊𝙇𝙔𝘽𝙊𝙏 𝘾𝘼𝙉𝘼𝙇'
 global.listo = '⚽️ ＡＱＵＩ ＴＩＥＮＥＳ ＭＥＮ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/y817pt.jpg')
@@ -40,7 +40,7 @@ global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => '
 //Ids channel
 global.idchannel = '120363312092804854@newsletter'
 global.canalIdM = ["120363312092804854@newsletter"]
-global.canalNombreM = ["ＮＡＧＩＢＯＴ－Ｖ²"]
+global.canalNombreM = ["𝑫𝑶𝑳𝑷𝑯𝑰𝑵－Ｖ²"]
 global.channelRD = await getRandomChannel()
 
 //fechas
@@ -103,7 +103,7 @@ var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
 global.packsticker = `▸ ${dia}\n▸ ${tiempo}\n▸ ${fecha}\n▸ ${botname}\n`
-global.packsticker2 = `\nＮＡＧＩＢＯＴ－Ｖ²`
+global.packsticker2 = `\n𝑫𝑶𝑳𝑷𝑯𝑰𝑵－Ｖ²²`
 
 
   
